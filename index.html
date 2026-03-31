@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Savings Bot - แจ้งเตือนออมเงิน</title>
+    <meta property="og:title" content="Savings Bot - ผู้ช่วยออมเงินของคุณ">
+    <meta property="og:description" content="บันทึกรายรับ-รายจ่ายง่ายๆ ผ่าน LINE พร้อม Dashboard สรุปผล">
+    <meta property="og:image" content="URL_รูปภาพบอท_หรือ_รูปพรีวิว_1200x630.png"> <meta property="og:url" content="URL_หน้าเว็บของคุณ">
+    <meta property="og:type" content="website">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Kanit', sans-serif; }
+    </style>
+
+    <script>
+        const LINE_URL = "https://line.me/R/ti/p/@754rejst"; // ** เปลี่ยนเป็นลิ้งก์บอทของคุณ **
+
+        function redirectToLine() {
+            // เช็คว่าเป็น Mobile Device หรือไม่
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+                // ถ้าเป็นมือถือ ให้รอ 2 วินาทีเพื่อให้คนเห็นหน้า Landing ก่อนแล้วค่อยเด้ง
+                setTimeout(() => {
+                    window.location.href = LINE_URL;
+                }, 2000); 
+            }
+        }
+
+        // เรียกใช้งานฟังก์ชันเมื่อโหลดหน้าเว็บเสร็จ
+        window.onload = redirectToLine;
+    </script>
+</head>
+<body class="bg-slate-50 flex items-center justify-center min-h-screen py-12 px-4">
+
+    <div class="max-w-md w-full bg-white rounded-3xl shadow-xl overflow-hidden text-center p-8 border border-slate-100">
+        <div class="w-24 h-24 bg-green-500 rounded-2xl mx-auto flex items-center justify-center shadow-lg mb-6">
+            <span class="text-white text-4xl">💰</span>
+        </div>
+
+        <h1 class="text-2xl font-bold text-slate-800 mb-2">Savings Chatbot</h1>
+        <p class="text-slate-500 mb-8 leading-relaxed">
+            กำลังพาท่านไปที่แอป LINE...<br>
+            <span class="text-sm">(หากไม่เด้งอัตโนมัติ ให้กดปุ่มด้านล่าง)</span>
+        </p>
+
+        <a href="https://line.me/R/ti/p/@YOUR_ID" 
+           class="block w-full py-4 bg-[#06C755] hover:bg-[#05b34c] text-white font-semibold rounded-xl transition-all transform hover:scale-[1.02] shadow-md">
+            เพิ่มเพื่อนใน LINE
+        </a>
+    </div>
+
+</body>
+</html>

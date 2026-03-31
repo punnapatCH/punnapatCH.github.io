@@ -18,21 +18,21 @@
     </style>
 
     <script>
-        const LINE_URL = "https://line.me/R/ti/p/@754rejst"; // ** เปลี่ยนเป็นลิ้งก์บอทของคุณ **
+        const LINE_URL = "https://line.me/R/ti/p/@754rejst"; 
 
         function redirectToLine() {
-            // เช็คว่าเป็น Mobile Device หรือไม่
+            
             const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
             
             if (isMobile) {
-                // ถ้าเป็นมือถือ ให้รอ 2 วินาทีเพื่อให้คนเห็นหน้า Landing ก่อนแล้วค่อยเด้ง
+                
                 setTimeout(() => {
                     window.location.href = LINE_URL;
                 }, 2000); 
             }
         }
 
-        // เรียกใช้งานฟังก์ชันเมื่อโหลดหน้าเว็บเสร็จ
+    
         window.onload = redirectToLine;
     </script>
 </head>
